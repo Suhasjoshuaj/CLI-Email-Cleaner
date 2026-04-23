@@ -39,5 +39,5 @@ pip install -e .
 ## CLI 
 
 ```CLI
-cleanmail --sender spammer@ads.com --after 2024/01/01 --verbose --permanent
+cleanmail --sender spammer@ads.com spammery@ads --after 2024/01/01 --verbose --permanent
 ```
