@@ -4,7 +4,7 @@ from .cleaner import clean_emails
 
 def main():
     parser = argparse.ArgumentParser(description='CLI Gmail cleaner')
-    parser.add_argument('--sender', help='Sender email to match')
+    parser.add_argument('--sender', nargs='+', help='Sender email(s) to match')
     parser.add_argument('--before', help='Only delete emails before this date (YYYY/MM/DD)')
     parser.add_argument('--after', help='Only delete emails after this date (YYYY/MM/DD)')
     parser.add_argument('--permanent', action='store_true', help='Permanently delete instead of moving to trash')

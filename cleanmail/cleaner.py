@@ -3,7 +3,11 @@ def clean_emails(service, sender=None, before=None, after=None, permanent=False,
 
     query_parts = []
     if sender:
-        query_parts.append(f"from:{sender}")
+        if isinstance(sender, list):
+            sender_query = " OR ".join([f"from:{s}" for s in sender])
+            query_parts.append(f"({sender_query})")
+        else:
+            query_parts.append(f"from:{sender}")
     if before:
         query_parts.append(f"before:{before}")
     if after:
